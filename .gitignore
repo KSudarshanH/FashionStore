@@ -1,0 +1,23 @@
+# Compiled class and build outputs
+target/
+build/
+bin/
+*.class
+
+# Eclipse metadata and temp files
+.metadata/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log

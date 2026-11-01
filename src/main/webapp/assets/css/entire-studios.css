@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,400&display=swap');
+
+:root {
+  /* Colors */
+  --color-bone: #e7ecea;
+  --color-ink: #000000;
+  --color-paper-white: #ffffff;
+
+  /* Typography — Font Families */
+  --font-space-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Typography — Scale */
+  --text-caption: 12px;
+  --leading-caption: 1.33;
+  --text-body: 16px;
+  --leading-body: 1.5;
+
+  /* Typography — Weights */
+  --font-weight-regular: 400;
+
+  /* Spacing */
+  --spacing-unit: 6px;
+  --spacing-6: 6px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-18: 18px;
+  --spacing-20: 20px;
+
+  /* Layout */
+  --card-padding: 6px;
+  --element-gap: 16px;
+
+  /* Named Radii */
+  --radius-tags: 0px;
+  --radius-cards: 0px;
+  --radius-images: 0px;
+  --radius-buttons: 0px;
+
+  /* Surfaces */
+  --surface-bone-canvas: #e7ecea;
+  --surface-ink-band: #000000;
+}
+
+/* =========================================================
+   GLOBAL RESET & BRUTALIST EDITORIAL FOUNDATION
+   ========================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important;
+  font-family: var(--font-space-mono) !important;
+  font-weight: 400 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+html, body {
+  background-color: var(--color-bone);
+  color: var(--color-ink);
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0 !important;
+}
+
+button, input, select, textarea {
+  font-family: var(--font-space-mono) !important;
+  font-weight: 400 !important;
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  border-radius: 0 !important;
+  outline: none;
+}
+
+/* =========================================================
+   TOP ANNOUNCEMENT BAR (Permanent Chrome)
+   ========================================================= */
+
+.announcement, .shipping-bar, .site-announcement {
+  width: 100%;
+  background-color: var(--color-ink);
+  color: var(--color-paper-white);
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  padding: var(--spacing-6) var(--spacing-12);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+}
+
+/* =========================================================
+   PRIMARY NAVIGATION (Three-Zone Editorial Bar)
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bone);
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-12) var(--spacing-18);
+  width: 100%;
+  gap: var(--spacing-16);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-16);
+  flex-wrap: wrap;
+}
+
+.nav-links a, .nav-zone-left a {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  text-transform: uppercase;
+  color: var(--color-ink);
+  padding: var(--spacing-6) 0;
+}
+
+.nav-links a.active, .nav-links a:hover {
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.brand, .brand-logo, .nav-brand {
+  font-size: var(--text-body) !important;
+  line-height: var(--leading-body);
+  color: var(--color-ink);
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.brand span, .brand-logo span {
+  font-weight: 400 !important;
+}
+
+.nav-actions, .nav-zone-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-16);
+}
+
+.nav-actions a, .nav-actions span, .nav-actions button {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-pill, .cart-counter, .bag-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  font-size: var(--text-caption);
+}
+
+/* =========================================================
+   BUTTONS & FORM CONTROLS
+   ========================================================= */
+
+.btn, .button, .violet-button, .light-button, .checkout-button,
+.shop-now-button, .auth-submit, .search-submit, .update-button,
+.order-button, .add-to-cart-btn {
+  background-color: var(--color-ink) !important;
+  color: var(--color-paper-white) !important;
+  font-size: var(--text-caption) !important;
+  line-height: var(--leading-caption);
+  padding: var(--spacing-6) var(--spacing-12) !important;
+  border: 1px solid var(--color-ink) !important;
+  border-radius: 0 !important;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-6);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+}
+
+.btn:hover, .button:hover, .violet-button:hover, .light-button:hover,
+.checkout-button:hover, .shop-now-button:hover, .auth-submit:hover,
+.search-submit:hover, .update-button:hover, .order-button:hover,
+.add-to-cart-btn:hover {
+  background-color: var(--color-bone) !important;
+  color: var(--color-ink) !important;
+}
+
+.btn-secondary, .btn-ghost, .section-link, .continue-shopping, .back-link {
+  background-color: transparent !important;
+  color: var(--color-ink) !important;
+  font-size: var(--text-caption) !important;
+  line-height: var(--leading-caption);
+  padding: var(--spacing-6) var(--spacing-12) !important;
+  border: 1px solid var(--color-ink) !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-secondary:hover, .btn-ghost:hover, .section-link:hover, .continue-shopping:hover, .back-link:hover {
+  background-color: var(--color-ink) !important;
+  color: var(--color-paper-white) !important;
+}
+
+input[type="text"], input[type="email"], input[type="password"],
+input[type="number"], input[type="tel"], textarea, select {
+  background-color: var(--color-bone);
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+  padding: var(--spacing-6) var(--spacing-12);
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  border-radius: 0 !important;
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  background-color: var(--color-paper-white);
+  border-color: var(--color-ink);
+  outline: none;
+}
+
+/* =========================================================
+   TYPOGRAPHIC RESTRAINT (Strict 12px / 16px Scale)
+   ========================================================= */
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  font-weight: 400 !important;
+  color: var(--color-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+p, span, label, td, th, li {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+}
+
+.eyebrow, .section-label, .caption-tag {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink);
+  margin-bottom: var(--spacing-6);
+}
+
+.hairline-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-ink);
+  margin: var(--spacing-16) 0;
+  border: none;
+}
+
+/* =========================================================
+   FOOTER (Brutalist Editorial Colophon)
+   ========================================================= */
+
+.footer, .site-footer {
+  width: 100%;
+  background-color: var(--color-bone);
+  border-top: 1px solid var(--color-ink);
+  padding: var(--spacing-20) var(--spacing-18);
+  margin-top: var(--spacing-20);
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--spacing-20);
+  margin-bottom: var(--spacing-20);
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-16);
+  }
+}
+
+.footer-column h4 {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-12);
+  letter-spacing: 0.06em;
+}
+
+.footer-column a {
+  display: block;
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: var(--color-ink);
+  margin-bottom: var(--spacing-6);
+  text-transform: uppercase;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-ink);
+  padding-top: var(--spacing-12);
+  font-size: var(--text-caption);
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  gap: var(--spacing-12);
+}
+
