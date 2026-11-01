@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/fashion_store";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "Sudarshan@624";
+    private static final String DEFAULT_URL = "jdbc:mysql://localhost:3306/fashion_store?useSSL=false&allowPublicKeyRetrieval=true";
+    private static final String DEFAULT_USERNAME = "root";
+    private static final String DEFAULT_PASSWORD = "Sudarshan@624";
 
     public static Connection getConnection() {
 
@@ -18,10 +18,24 @@ public class DBConnection {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
+            String url = System.getenv("DB_URL");
+            String username = System.getenv("DB_USER");
+            String password = System.getenv("DB_PASSWORD");
+
+            if (url == null || url.trim().isEmpty()) {
+                url = DEFAULT_URL;
+            }
+            if (username == null || username.trim().isEmpty()) {
+                username = DEFAULT_USERNAME;
+            }
+            if (password == null) {
+                password = DEFAULT_PASSWORD;
+            }
+
             connection = DriverManager.getConnection(
-                    URL,
-                    USERNAME,
-                    PASSWORD
+                    url,
+                    username,
+                    password
             );
 
             System.out.println("Database connected successfully!");
@@ -33,7 +47,7 @@ public class DBConnection {
 
         } catch (SQLException e) {
 
-            System.out.println("Database connection failed.");
+            System.out.println("Database connection failed: " + e.getMessage());
             e.printStackTrace();
         }
 
