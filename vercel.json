@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "https://fashion-store-yibj.onrender.com/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "fashion-store"
+      }
+    }
+  ],
+  "services": {
+    "fashion-store": {
+      "root": "."
+    }
+  }
+}
