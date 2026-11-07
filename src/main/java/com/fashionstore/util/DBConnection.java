@@ -8,7 +8,7 @@ public class DBConnection {
 
     private static final String DEFAULT_URL = "jdbc:mysql://localhost:3306/fashion_store?useSSL=false&allowPublicKeyRetrieval=true";
     private static final String DEFAULT_USERNAME = "root";
-    private static final String DEFAULT_PASSWORD = "Sudarshan@624";
+    private static final String DEFAULT_PASSWORD = "*************";
 
     public static Connection getConnection() {
 
